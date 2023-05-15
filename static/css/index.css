@@ -1,0 +1,145 @@
+body {
+	position: relative;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+	color: #000;
+	min-width: 320px;
+	overflow-x: hidden;
+	height: 100vh;
+}
+
+
+/**
+ * Другие стили
+ */
+
+/* Шапка сайта */
+
+.navbar {
+	width: 100%;
+	height: 70px;
+	box-shadow: 0 4px 10px rgba(0,0,0, .1);
+}
+
+
+
+.navbar .container {
+	height: inherit;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-menu {
+	list-style-type: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.navbar-menu li {
+	display: inline-block;
+}
+
+.navbar-menu li a  {
+	display: inline-block;
+	color: #000;
+	opacity: 0.6;
+	text-decoration: none;
+	padding: 10px;
+	transition: all .07s ease-in-out;
+}
+
+.navbar-menu li a:hover  {
+	color: saddlebrown;
+}
+
+.navbar-wrap {
+	display: flex;
+	flex-flow: row nowrap;
+
+}
+
+
+.navbar-brand {
+	font-weight: 700;
+	font-size: 26px;
+	text-decoration: none;
+	color: #000;
+	transition: all .07s ease-in-out;
+}
+
+.navbar-brand:hover  {
+	color: saddlebrown;
+}
+
+
+/* Главный экран */
+
+
+.header {
+	position: relative;
+	min-height: 700px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.header .row {
+	min-height: 700px;
+	display: flex;
+	align-items: center;
+}
+
+.header-content {
+	text-align: center;
+	position: relative;
+	z-index: 2;
+	color: #000;
+}
+
+
+.header-content h1 {
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	font-size: 36px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+
+.header-content h4  {
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	font-size: 21px;
+	font-weight: 400;
+	opacity: 0.9;
+	margin-bottom: 250px;
+}
+
+.btn-main {
+	display: inline-block;
+	padding: 10px 35px;
+	font-size: 18px;
+	border: none;
+	color: #000;
+	background-color: #ffc107;
+	text-transform: uppercase;
+	border-radius: 15px;
+	font-weight: 500;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
+	transition: all .09s ease-out;
+	margin-left: 10px;
+}
+
+.btn-main:hover {
+	box-shadow: 0 5px 10px rgba(255, 193, 7, 0.81);
+	transform: scale(1.05);
+}
+

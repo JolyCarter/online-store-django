@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+
+    <!-- Bootstrap reboot (для сброса стилей) -->
+    <link rel="stylesheet" href="{% static 'libs/bootstrap-reboot.min.css' %}">
+
+    <!-- Bootstrap сетка -->
+    <link rel="stylesheet" href="{% static 'libs/bootstrap-grid.min.css' %}">
+
+    <!-- Шрифты с Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Стили сайта -->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pillows_mattresses.css' %}">
+</head>
+<body>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<nav class="navbar">
+    <div class="container">
+        <a href="http://127.0.0.1:8000" class="navbar-brand">CloudSoft</a>
+        <div class="navbar-wrap">
+            <ul class="navbar-menu">
+                <li><a href="http://127.0.0.1:8000">Главная</a></li>
+                <li><a href="http://127.0.0.1:8000/mattresses">Матрасы</a></li>
+                <li><a href="http://127.0.0.1:8000/pillows">Подушки</a></li>
+                <li><a href="http://127.0.0.1:8000/contacts">Контакты</a></li>
+                <li><a href="http://127.0.0.1:8000/cart"><ion-icon name="cart"></ion-icon></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container mt-5">
+    <div class="row">
+        {% for prod in products %}
+        {% if prod.category == 'ПОДУШКА' %}
+        <div class="col-md-3">
+
+            <div class="product">
+                <a href="http://127.0.0.1:8000/product/{{ prod.id }}"><div class="image">
+                    <img src="{% static 'img/' %}{{prod.photo}}" alt="">
+                </div></a>
+                <div class="info">
+                    <h3>{{ prod.name }}</h3>
+                    <div class="info-price">
+                        <span class="price">{{ prod.price }}<small>₽</small> </span>
+                        <button class="add-to-cart"><ion-icon name="cart-outline"></ion-icon></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
