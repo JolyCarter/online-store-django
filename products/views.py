@@ -6,9 +6,9 @@ from feedback.models import Feedback
 
 
 def feedback(request):
-    name = request.GET['name']
-    email = request.GET['email']
-    message = request.GET['text']
+    name = request.POST['name']
+    email = request.POST['email']
+    message = request.POST['text']
     element = Feedback(user_name=name, email=email, message=message)
     element.save()
     return render(request, 'feedback.html')
